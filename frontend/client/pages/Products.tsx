@@ -10,6 +10,7 @@ interface Product {
   description: string;
   quantity: number;
   category: string;
+  storageLocation: string;
 }
 
 // Dados iniciais de exemplo
@@ -19,12 +20,14 @@ const initialProducts: Product[] = [
     description: "Produto exemplo 1",
     quantity: 50,
     category: "Categoria A",
+    storageLocation: "Estoque A",
   },
   {
     id: 2,
     description: "Produto exemplo 2",
     quantity: 25,
     category: "Categoria B",
+    storageLocation: "Estoque B",
   },
 ];
 
