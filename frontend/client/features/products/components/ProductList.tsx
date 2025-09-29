@@ -14,6 +14,7 @@ interface Product {
   description: string;
   quantity: number;
   category: string;
+  storageLocation: string;
 }
 
 // 2. Definimos que o componente receberá uma lista de produtos como propriedade
@@ -41,6 +42,9 @@ export function ProductList({ products }: ProductListProps) {
                 CATEGORIA
               </TableHead>
               <TableHead className="text-[16px] font-medium text-primary-blue">
+                LOCAL
+              </TableHead>
+              <TableHead className="text-[16px] font-medium text-primary-blue">
                 AÇÕES
               </TableHead>
             </TableRow>
@@ -52,6 +56,7 @@ export function ProductList({ products }: ProductListProps) {
                 <TableCell>{product.description}</TableCell>
                 <TableCell>{product.quantity}</TableCell>
                 <TableCell>{product.category}</TableCell>
+                <TableCell>{product.storageLocation}</TableCell>
                 <TableCell>
                   <Button
                     variant="link"
