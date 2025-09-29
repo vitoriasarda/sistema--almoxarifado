@@ -15,6 +15,7 @@ interface NewProduct {
   description: string;
   quantity: number;
   category: string;
+  storageLocation: string;
 }
 
 // 2. Definimos que o componente receberá uma função como propriedade
@@ -27,12 +28,13 @@ export function ProductForm({ onAddProduct }: ProductFormProps) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState("");
   const [category, setCategory] = useState("");
+  const [storageLocation, setStorageLocation] = useState("");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault(); // Impede que a página recarregue
 
     // Validação simples
-    if (!description || !quantity || !category) {
+    if (!description || !quantity || !category || !storageLocation) {
       alert("Por favor, preencha todos os campos.");
       return;
     }
@@ -42,12 +44,14 @@ export function ProductForm({ onAddProduct }: ProductFormProps) {
       description,
       quantity: Number(quantity),
       category,
+      storageLocation,
     });
 
     // 5. Limpa os campos do formulário após o envio
     setDescription("");
     setQuantity("");
     setCategory("");
+    setStorageLocation("");
   };
 
   return (
@@ -63,10 +67,8 @@ export function ProductForm({ onAddProduct }: ProductFormProps) {
         </h2>
       </div>
       {/* 6. Adiciona o evento onSubmit ao formulário */}
-      <form
-        onSubmit={handleSubmit}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
-      >
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
           <Label
             htmlFor="description"
@@ -112,7 +114,28 @@ export function ProductForm({ onAddProduct }: ProductFormProps) {
             </SelectContent>
           </Select>
         </div>
-        <div className="md:col-span-3 mt-6 flex justify-end">
+        </div>
+        <div>
+          <Label
+            htmlFor="storage-location"
+            className="block text-[16px] font-medium font-inter mb-2 text-primary-blue"
+          >
+            LOCAL DE ARMAZENAMENTO
+          </Label>
+          <Select value={storageLocation} onValueChange={setStorageLocation}>
+            <SelectTrigger className="w-full h-[31px] px-3 border-light-border">
+              <SelectValue placeholder="Selecionar local" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Estoque A">Estoque A</SelectItem>
+              <SelectItem value="Estoque B">Estoque B</SelectItem>
+              <SelectItem value="Estoque C">Estoque C</SelectItem>
+              <SelectItem value="Depósito Principal">Depósito Principal</SelectItem>
+              <SelectItem value="Depósito Secundário">Depósito Secundário</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="flex justify-end">
           <Button
             type="submit"
             className="px-6 py-2 bg-primary-blue text-white rounded-lg hover:bg-primary-blue/90"
