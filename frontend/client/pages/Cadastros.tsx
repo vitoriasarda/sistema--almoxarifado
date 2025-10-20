@@ -34,13 +34,13 @@ export default function Cadastros() {
   return (
     <div className="flex min-h-screen bg-secondary-gray">
       <Sidebar />
-      <main className="flex-1 p-4 md:p-12 pt-20 md:pt-12">
+      <main className="flex-1 p-4 md:p-8 pt-10 md:pt-10">
         <div className="mb-8 md:mb-12">
           <h1 className="text-4xl md:text-[36px] font-medium font-inter text-center md:text-left text-primary-blue">
             Cadastros
           </h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
           {cadastroItens.map((item) => (
             <CadastroCard
               key={item.title}
