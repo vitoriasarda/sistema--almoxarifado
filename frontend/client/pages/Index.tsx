@@ -6,11 +6,11 @@ export default function Index() {
       <Sidebar />
 
       {/* Conteúdo Principal */}
-      <main className="flex-1 p-4 md:p-12 pt-20 md:pt-12">
+      <main className="flex-1 p-4 md:p-8 pt-10 md:pt-10">
         {/* Cards de Resumo */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-4 mb-6 md:mb-6">
           <div className="w-full max-w-[310px] h-[155px] bg-white rounded-lg flex flex-col justify-center items-center mx-auto md:mx-0">
-            <h3 className="text-lg md:text-[24px] font-medium font-inter text-center text-primary-blue">
+            <h3 className="text-lg md:text-[24px] font-medium font-inter text-center mb-4 text-primary-blue">
               Total de itens
             </h3>
           </div>
@@ -27,7 +27,7 @@ export default function Index() {
         </div>
 
         {/* Tabelas de Dados */}
-        <div className="space-y-6 md:space-y-8">
+        <div className="space-y-4 md:space-y-6">
           {/* Tabela de Itens com estoque baixo */}
           <div className="w-full max-w-[960px] bg-white rounded-lg p-4 md:p-6">
             <h2 className="text-lg md:text-[24px] font-medium font-inter mb-4 md:mb-6 text-primary-blue">
