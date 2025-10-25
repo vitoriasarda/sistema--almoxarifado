@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import Cadastros from "./pages/Cadastros";
 import Products from "./pages/Products";
+import Categories from "./pages/Categories";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/cadastros" element={<Cadastros />} />
             <Route path="/produtos" element={<Products />} />
+            <Route path="/categorias" element={<Categories />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
